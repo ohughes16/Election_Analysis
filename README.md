@@ -37,7 +37,8 @@ The analysis of the election showed that:
 ## Election-Audit Summary
 This script was designed to run through a .csv file of election results. The script is coded to skip the header row and the columns are hard coded to be specific values. The 1st column in the .csv is ignored, the second column in the .csv (index 1) is pulled as the "County" variable, and the third column in the .csv (index 2) is pulled as the candidate names.
 
-```# Read the csv and convert it into a list of dictionaries
+```ruby
+# Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
     reader = csv.reader(election_data)
 
@@ -61,7 +62,8 @@ If you are going to re-use this code for another election, be sure to modify eit
 There are a couple of modificaitons that could be done to this code to shorten the code and make it more intuitive. Instead of creating lists for candidate_options and county_list, we could shorten the code and call on the dictionary keys. 
 
 Also in this particular code for the winning county decision statement we could eliminate the 'and' conditional and our results would be the same since the highest number of votes would still be the winner, regardless of the percentage of votes that individual received. If this would change in the future, we could modify the code to indicate that.
-```for county in county_votes:
+```ruby
+for county in county_votes:
         # 6b: Retrieve the county vote count.
         voter_turnout = county_votes.get(county)
         # 6c: Calculate the percent of total votes for the county.
